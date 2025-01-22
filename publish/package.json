@@ -5,13 +5,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.ts",
+      "types": "./dist/index.ts",
+      "default": "./dist/index.ts"
+    },
+    "./client": {
+      "import": "./dist/exports/client.ts",
+      "types": "./dist/exports/client.ts",
+      "default": "./dist/exports/client.ts"
     }
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.ts",
+  "types": "./dist/index.ts",
   "files": [
     "dist"
   ],
@@ -21,7 +26,7 @@
   },
   "peerDependencies": {
     "@payloadcms/next": "^3",
-    "next": "15.1.5",
+    "next": "^15",
     "payload": "^3"
   },
   "engines": {

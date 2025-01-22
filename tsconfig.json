@@ -16,8 +16,13 @@
     "strict": true,
     "resolveJsonModule": true,
     "jsx": "preserve",
-    "target": "ES2022"
+    "target": "ES2022",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src/**/*", "tsup.config.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
