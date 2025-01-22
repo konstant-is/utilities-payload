@@ -5,19 +5,19 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.ts",
-      "types": "./dist/index.ts",
-      "default": "./dist/index.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./client": {
-      "import": "./dist/exports/client.ts",
-      "types": "./dist/exports/client.ts",
-      "default": "./dist/exports/client.ts"
+      "import": "./dist/exports/client.js",
+      "types": "./dist/exports/client.d.ts",
+      "default": "./dist/exports/client.js"
     },
     "./fields": {
-      "import": "./dist/fields.ts",
-      "types": "./dist/fields.ts",
-      "default": "./dist/fields.ts"
+      "import": "./dist/fields/index.js",
+      "types": "./dist/fields.d.ts",
+      "default": "./dist/fields/index.js"
     }
   },
   "main": "./dist/index.ts",
