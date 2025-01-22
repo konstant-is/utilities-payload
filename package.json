@@ -15,9 +15,9 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
-  "dependencies": {},
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
+    "@payloadcms/eslint-config": "^3.9.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -25,7 +25,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "fs": "0.0.1-security",
-    
     "next": "15.1.5",
     "prettier": "^3",
     "react": "^19.0.0",
@@ -39,9 +38,9 @@
     "url": "^0.11.4"
   },
   "peerDependencies": {
-    "payload": "^3",
     "@payloadcms/next": "^3",
-    "next": "15.1.5"
+    "next": "15.1.5",
+    "payload": "^3"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
