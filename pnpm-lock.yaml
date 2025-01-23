@@ -17,8 +17,8 @@ devDependencies:
     specifier: ^3.2.0
     version: 3.2.0
   '@konstant/utilities-ui':
-    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.0.7
-    version: github.com/konstant-is/utilities-ui/69a87084440f8f15492e508e0c716b217fa85489
+    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.1.0
+    version: github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91(date-fns@4.1.0)(next@15.1.5)
   '@payloadcms/eslint-config':
     specifier: ^3.9.0
     version: 3.9.0
@@ -4717,6 +4717,23 @@ packages:
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
 
+  /pino@9.6.0:
+    resolution: {integrity: sha512-i85pKRCt4qMjZ1+L7sy2Ag4t1atFcdbEt76+7iRJn1g2BvsnRMGu9p8pivl9fs63M2kF/A0OacFZhTub+m/qMg==}
+    hasBin: true
+    dependencies:
+      atomic-sleep: 1.0.0
+      fast-redact: 3.5.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 2.0.0
+      pino-std-serializers: 7.0.0
+      process-warning: 4.0.1
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      sonic-boom: 4.2.0
+      thread-stream: 3.1.0
+    dev: true
+
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
@@ -5944,12 +5961,19 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/konstant-is/utilities-ui/69a87084440f8f15492e508e0c716b217fa85489:
-    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/69a87084440f8f15492e508e0c716b217fa85489}
+  github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91(date-fns@4.1.0)(next@15.1.5):
+    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/8bc7ace62f97d1a3112d2fa2614cc0da41492c91}
+    id: github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91
     name: '@konstant/utilities-ui'
-    version: 0.0.7
+    version: 0.1.0
+    peerDependencies:
+      date-fns: ^4
+      next: ^15
     dependencies:
       date-fns: 4.1.0
+      next: 15.1.5(react-dom@19.0.0)(react@19.0.0)
+      pino: 9.6.0
+      pino-pretty: 13.0.0
       qs-esm: 7.0.2
       slugify: 1.6.6
     dev: true

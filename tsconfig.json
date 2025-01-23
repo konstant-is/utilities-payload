@@ -17,6 +17,9 @@
     "resolveJsonModule": true,
     "jsx": "preserve",
     "target": "ES2022",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "plugins": [
       {
         "name": "next"
