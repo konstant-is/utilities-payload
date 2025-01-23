@@ -17,8 +17,8 @@ devDependencies:
     specifier: ^3.2.0
     version: 3.2.0
   '@konstant/utilities-ui':
-    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.1.0
-    version: github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91(date-fns@4.1.0)(next@15.1.5)
+    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.1.1
+    version: github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716(date-fns@4.1.0)(next@15.1.5)
   '@payloadcms/eslint-config':
     specifier: ^3.9.0
     version: 3.9.0
@@ -5961,11 +5961,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91(date-fns@4.1.0)(next@15.1.5):
-    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/8bc7ace62f97d1a3112d2fa2614cc0da41492c91}
-    id: github.com/konstant-is/utilities-ui/8bc7ace62f97d1a3112d2fa2614cc0da41492c91
+  github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716(date-fns@4.1.0)(next@15.1.5):
+    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/acda27a31d61bf24fac1f7492728980c75d24716}
+    id: github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716
     name: '@konstant/utilities-ui'
-    version: 0.1.0
+    version: 0.1.1
     peerDependencies:
       date-fns: ^4
       next: ^15
