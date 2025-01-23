@@ -8,17 +8,21 @@
     "build:types": "tsc --outDir dist --rootDir ./src",
     "ci:clean": "rimraf {dist,*.tsbuildinfo}",
     "ci:copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
+    "ci:patch": "pnpm ci:version patch && pnpm ci:tag",
     "ci:tag": "node scripts/tag.js",
     "ci:version": "node scripts/ci-version.js",
-    "ci:patch": "pnpm ci:version patch && pnpm ci:tag",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
+  "dependencies": {
+    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "url": "^0.11.4"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.1",
     "@payloadcms/eslint-config": "^3.9.0",
-    "@payloadcms/ui": "^3.18.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -26,21 +30,18 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "fs": "0.0.1-security",
-    "next": "15.1.5",
     "prettier": "^3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "rimraf": "^6.0.1",
     "semver": "^7.6.3",
     "sharp": "0.33.5",
     "sort-package-json": "^2.10.0",
     "tsup": "^8.3.5",
-    "typescript": "latest",
-    "url": "^0.11.4"
+    "typescript": "latest"
   },
   "peerDependencies": {
     "@payloadcms/next": "^3",
-    "next": "15.1.5",
+    "@payloadcms/ui": "^3",
+    "next": "^15.1.5",
     "payload": "^3"
   },
   "engines": {

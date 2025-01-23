@@ -9,14 +9,14 @@ export default defineConfig(() => ({
     'src/fields/index.ts',
     'src/queries/index.ts',
     'src/exports/client.ts',
-  ], // Include all necessary entry points
-  external: ['react', 'payload', '@payloadcms/ui'], // Mark React as external
-  format: ['cjs', 'esm'], // Build both CommonJS and ESM
-  outDir: 'dist', // Output directory
-  sourcemap: true, // Generate sourcemaps
+  ],
   esbuildOptions: (options) => {
     options.alias = {
       '@': './src', // Map '@' to the 'src' directory
     }
   },
+  external: ['react', 'payload', 'next', '@payloadcms/ui'], // Mark React as external
+  format: ['cjs', 'esm'], // Build both CommonJS and ESM
+  outDir: 'dist', // Output directory
+  sourcemap: true, // Generate sourcemaps
 }))
