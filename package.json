@@ -1,6 +1,6 @@
 {
   "name": "@konstant/utilities-payload",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Common Payload utilities",
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "ci:copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
     "ci:tag": "node scripts/tag.js",
     "ci:version": "node scripts/ci-version.js",
+    "ci:patch": "pnpm ci:version patch && pnpm ci:tag",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
