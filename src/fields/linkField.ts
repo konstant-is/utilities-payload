@@ -6,19 +6,8 @@ import { field } from '@/utils/field.js'
 
 import { urlField } from './urlField.js'
 
-type LinkTypes = 'custom' | 'reference'
-
 const linkAppearanceOptions = createFieldOptions(['button', 'cta', 'custom', 'default', 'link'])
-const linkOptions: Record<LinkTypes, { label: string; value: string }> = {
-  custom: {
-    label: 'Custom URL',
-    value: 'custom',
-  },
-  reference: {
-    label: 'Internal link',
-    value: 'reference',
-  },
-}
+const linkOptions = createFieldOptions(['reference', 'custom'])
 
 export const linkField = createField<{
   relationTo: string[]
@@ -34,8 +23,8 @@ export const linkField = createField<{
           layout: 'horizontal',
           width: '50%',
         },
-        defaultValue: linkOptions.reference.value,
-        options: Object.values(linkOptions),
+        defaultValue: linkOptions.values.reference,
+        options: linkOptions.options,
         required: true,
       }),
       field({
@@ -54,11 +43,11 @@ export const linkField = createField<{
 
   const types: Field[] = [
     internalLinkField({
-      condition: (_, siblingData) => siblingData?.type === 'reference',
+      condition: (_, siblingData) => siblingData?.type === linkOptions.values.reference,
       relationTo: props.relationTo,
     }),
     urlField({
-      condition: (_, siblingData) => siblingData?.type === 'custom',
+      condition: (_, siblingData) => siblingData?.type === linkOptions.values.custom,
       label: 'Custom URL',
     }),
   ]
