@@ -8,6 +8,7 @@ export const urlField = createField((props) => {
     type: 'text',
     admin: {
       condition: props?.condition,
+      hidden: props.hidden,
     },
     hasMany: false,
     label: props?.label ?? 'Url',
