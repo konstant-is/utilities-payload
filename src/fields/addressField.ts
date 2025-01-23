@@ -27,9 +27,9 @@ export const addressField = createField<{
     name: props.name ?? 'address',
     type: 'group',
     admin: {
-      condition: props?.condition,
-      description: props?.description,
-      hideGutter: props?.hideGutter,
+      condition: props.condition,
+      description: props.description,
+      hideGutter: props.hideGutter,
     },
     fields: [
       field({

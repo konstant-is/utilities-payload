@@ -9,11 +9,28 @@ import { urlField } from './urlField.js'
 const linkAppearanceOptions = createFieldOptions(['button', 'cta', 'custom', 'default', 'link'])
 const linkOptions = createFieldOptions(['reference', 'custom'])
 
-export const linkField = createField<{
+type Options = {
   relationTo: string[]
   showAppearance?: boolean
-}>((props) => {
-  const options = field({
+}
+
+export const linkField = createField<Options>((props) => {
+  const group = field({
+    name: props.name || 'link',
+    type: 'group',
+    admin: {
+      condition: props.condition,
+      description: props.description,
+      hideGutter: props.hideGutter || true,
+    },
+    fields: [linkOptionsField(), ...types(props), labelField, appearance(props)],
+    label: props.label || 'Link',
+  })
+  return group
+})
+
+const linkOptionsField = () => {
+  return field({
     type: 'row',
     fields: [
       field({
@@ -40,8 +57,10 @@ export const linkField = createField<{
       }),
     ],
   })
+}
 
-  const types: Field[] = [
+const types = (props: Options): Field[] => {
+  return [
     internalLinkField({
       condition: (_, siblingData) => siblingData?.type === linkOptions.values.reference,
       relationTo: props.relationTo,
@@ -51,8 +70,10 @@ export const linkField = createField<{
       label: 'Custom URL',
     }),
   ]
+}
 
-  const appearance = field({
+const appearance = (props: Options) =>
+  field({
     name: 'appearance',
     type: 'select',
     admin: {
@@ -64,24 +85,11 @@ export const linkField = createField<{
     required: false,
   })
 
-  const label = field({
-    name: 'label',
-    type: 'text',
-    label: 'Link Text',
-    required: true,
-  })
-
-  const group = field({
-    name: props.name || 'link',
-    type: 'group',
-    admin: {
-      hideGutter: true,
-    },
-    fields: [options, ...types, label, appearance],
-    label: props.label || 'Link',
-  })
-
-  return group
+const labelField = field({
+  name: 'label',
+  type: 'text',
+  label: 'Link Text',
+  required: true,
 })
 
 export const internalLinkField = createField<{
