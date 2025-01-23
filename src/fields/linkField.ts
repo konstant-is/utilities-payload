@@ -11,7 +11,7 @@ const linkOptions = createFieldOptions(['reference', 'custom'])
 
 export const linkField = createField<{
   relationTo: string[]
-  showAppearance: boolean
+  showAppearance?: boolean
 }>((props) => {
   const options = field({
     type: 'row',
