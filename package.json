@@ -3,44 +3,40 @@
   "version": "0.1.7",
   "description": "Common Payload utilities",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "import": "./dist/exports/client.js",
+      "types": "./dist/exports/client.d.ts",
+      "default": "./dist/exports/client.js"
+    },
+    "./fields": {
+      "import": "./dist/fields/index.js",
+      "types": "./dist/fields.d.ts",
+      "default": "./dist/fields/index.js"
+    },
+    "./queries": {
+      "import": "./dist/queries/index.js",
+      "types": "./dist/queries.d.ts",
+      "default": "./dist/queries/index.js"
+    }
+  },
+  "main": "./dist/index.ts",
+  "types": "./dist/index.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "pnpm ci:clean && pnpm tsup",
-    "build:types": "tsc --outDir dist --rootDir ./src",
-    "ci:clean": "rimraf {dist,*.tsbuildinfo}",
-    "ci:copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
-    "ci:tag": "node scripts/tag.js",
-    "ci:version": "node scripts/ci-version.js",
-    "ci:patch": "pnpm ci:version patch && pnpm ci:tag",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
-    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.1",
-    "@payloadcms/eslint-config": "^3.9.0",
-    "@payloadcms/ui": "^3.18.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "cross-env": "^7.0.3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.5",
-    "fs": "0.0.1-security",
-    "next": "15.1.5",
-    "prettier": "^3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rimraf": "^6.0.1",
-    "semver": "^7.6.3",
-    "sharp": "0.33.5",
-    "sort-package-json": "^2.10.0",
-    "tsup": "^8.3.5",
-    "typescript": "latest",
-    "url": "^0.11.4"
+    "ci:clean": "rimraf {dist,*.tsbuildinfo}"
   },
   "peerDependencies": {
     "@payloadcms/next": "^3",
-    "next": "15.1.5",
+    "next": "^15",
     "payload": "^3"
   },
   "engines": {
