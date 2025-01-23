@@ -1,6 +1,6 @@
 {
   "name": "@konstant/utilities-payload",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Common Payload utilities",
   "type": "module",
   "exports": {
@@ -18,6 +18,11 @@
       "import": "./dist/fields/index.js",
       "types": "./dist/fields.d.ts",
       "default": "./dist/fields/index.js"
+    },
+    "./queries": {
+      "import": "./dist/queries/index.js",
+      "types": "./dist/queries.d.ts",
+      "default": "./dist/queries/index.js"
     }
   },
   "main": "./dist/index.ts",
