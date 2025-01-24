@@ -10,7 +10,7 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "outDir": "./dist",
-    // "rootDir": "./src",
+    "rootDir": "./src",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
