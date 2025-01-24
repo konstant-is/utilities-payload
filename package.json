@@ -1,6 +1,6 @@
 {
   "name": "@konstant/utilities-payload",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Common Payload utilities",
   "type": "module",
   "scripts": {
@@ -15,7 +15,11 @@
     "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
-    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.1",
+    "@payloadcms/next": "^3.18.0",
+    "@payloadcms/ui": "^3.18.0",
+    "payload": "^3.18.0",
+    "next": "^15.1.5",
+    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "url": "^0.11.4"
@@ -37,12 +41,6 @@
     "sort-package-json": "^2.10.0",
     "tsup": "^8.3.5",
     "typescript": "latest"
-  },
-  "peerDependencies": {
-    "@payloadcms/next": "^3",
-    "@payloadcms/ui": "^3",
-    "next": "^15.1.5",
-    "payload": "^3"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"

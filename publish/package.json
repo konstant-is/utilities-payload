@@ -1,6 +1,6 @@
 {
   "name": "@konstant/utilities-payload",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Common Payload utilities",
   "type": "module",
   "exports": {
@@ -35,7 +35,7 @@
     "ci:clean": "rimraf {dist,*.tsbuildinfo}"
   },
   "dependencies": {
-    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.1",
+    "@konstant/utilities-ui": "git+https://github.com:konstant-is/utilities-ui#release-v0.1.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "url": "^0.11.4"
