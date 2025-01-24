@@ -1,6 +1,6 @@
 {
   "name": "@konstant/utilities-payload",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Common Payload utilities",
   "type": "module",
   "scripts": {
