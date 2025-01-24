@@ -12,13 +12,37 @@ const incrementVersion = (currentVersion, releaseType) => {
   return semver.inc(currentVersion, releaseType)
 }
 
+const getPackageDep = (packageName) => {
+  const path = resolvePath(`../../${packageName}/package.json`)
+  const json = readJson(path)
+  const version = json.version
+
+  if (!version) {
+    throw Error(`Version from ${packageName} not found`)
+  }
+
+  console.log(`${packageName}: ${version}`)
+  return `git+https://github.com:konstant-is/${packageName}#release-v${version}`
+}
+
+const writeJson = (path, json) => {
+  fs.writeFileSync(path, JSON.stringify(json, null, 2) + '\n', 'utf8')
+}
+
+const readJson = (p) => {
+  return JSON.parse(fs.readFileSync(p, 'utf8'))
+}
+
+const resolvePath = (p) => {
+  return path.resolve(__dirname, p)
+}
 const updateVersion = (releaseType) => {
-  const packageJsonPath = path.resolve(__dirname, '../package.json')
-  const publishPackageJsonPath = path.resolve(__dirname, '../publish/package.json')
+  const packageJsonPath = resolvePath('../package.json')
+  const publishPackageJsonPath = resolvePath('../publish/package.json')
 
   try {
-    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
-    const publishPackageJson = JSON.parse(fs.readFileSync(publishPackageJsonPath, 'utf8'))
+    const packageJson = readJson(packageJsonPath, 'utf8')
+    const publishPackageJson = readJson(publishPackageJsonPath)
 
     const newVersion = incrementVersion(packageJson.version, releaseType)
 
@@ -29,12 +53,12 @@ const updateVersion = (releaseType) => {
     packageJson.version = newVersion
     publishPackageJson.version = newVersion
 
-    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n', 'utf8')
-    fs.writeFileSync(
-      publishPackageJsonPath,
-      JSON.stringify(publishPackageJson, null, 2) + '\n',
-      'utf8',
-    )
+    const uiUtilsDep = getPackageDep('utilities-ui')
+    packageJson.dependencies['@konstant/utilities-ui'] = uiUtilsDep
+    publishPackageJson.dependencies['@konstant/utilities-ui'] = uiUtilsDep
+
+    writeJson(packageJsonPath, packageJson)
+    writeJson(publishPackageJsonPath, publishPackageJson)
 
     // Commit the changes to Git
     execSync(`git add ${packageJsonPath}`)

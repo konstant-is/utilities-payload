@@ -6,19 +6,19 @@ settings:
 
 dependencies:
   '@konstant/utilities-ui':
-    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.1.1
-    version: github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716(date-fns@4.1.0)(next@15.1.5)
+    specifier: git+https://github.com:konstant-is/utilities-ui#release-v0.1.10
+    version: github.com/konstant-is/utilities-ui/bfd859e30d3f3f16e1f31550f886a1c69aa42b47(next@15.1.5)(react-dom@19.0.0)(react@19.0.0)
   '@payloadcms/next':
-    specifier: ^3
+    specifier: ^3.18.0
     version: 3.18.0(@types/react@19.0.7)(graphql@16.10.0)(monaco-editor@0.52.2)(next@15.1.5)(payload@3.18.0)(react-dom@19.0.0)(react@19.0.0)(typescript@5.7.3)
   '@payloadcms/ui':
-    specifier: ^3
+    specifier: ^3.18.0
     version: 3.18.0(@types/react@19.0.7)(monaco-editor@0.52.2)(next@15.1.5)(payload@3.18.0)(react-dom@19.0.0)(react@19.0.0)(typescript@5.7.3)
   next:
     specifier: ^15.1.5
     version: 15.1.5(react-dom@19.0.0)(react@19.0.0)
   payload:
-    specifier: ^3
+    specifier: ^3.18.0
     version: 3.18.0(graphql@16.10.0)(monaco-editor@0.52.2)(react-dom@19.0.0)(react@19.0.0)(typescript@5.7.3)
   react:
     specifier: ^19.0.0
@@ -3811,7 +3811,6 @@ packages:
     resolution: {integrity: sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==}
     dependencies:
       resolve-pkg-maps: 1.0.0
-    dev: true
 
   /get-tsconfig@4.8.1:
     resolution: {integrity: sha512-k9PN+cFBmaLWtVz29SkUoqU5O0slLuHJXt/2P+tMVFT+phsSGXGkp9t3rQIqdz0e+06EHNGs3oM6ZX1s2zHxRg==}
@@ -4852,23 +4851,6 @@ packages:
       thread-stream: 3.1.0
     dev: false
 
-  /pino@9.6.0:
-    resolution: {integrity: sha512-i85pKRCt4qMjZ1+L7sy2Ag4t1atFcdbEt76+7iRJn1g2BvsnRMGu9p8pivl9fs63M2kF/A0OacFZhTub+m/qMg==}
-    hasBin: true
-    dependencies:
-      atomic-sleep: 1.0.0
-      fast-redact: 3.5.0
-      on-exit-leak-free: 2.1.2
-      pino-abstract-transport: 2.0.0
-      pino-std-serializers: 7.0.0
-      process-warning: 4.0.1
-      quick-format-unescaped: 4.0.4
-      real-require: 0.2.0
-      safe-stable-stringify: 2.5.0
-      sonic-boom: 4.2.0
-      thread-stream: 3.1.0
-    dev: false
-
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
@@ -5856,7 +5838,7 @@ packages:
     hasBin: true
     dependencies:
       esbuild: 0.23.1
-      get-tsconfig: 4.8.1
+      get-tsconfig: 4.10.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -6137,19 +6119,22 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716(date-fns@4.1.0)(next@15.1.5):
-    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/acda27a31d61bf24fac1f7492728980c75d24716}
-    id: github.com/konstant-is/utilities-ui/acda27a31d61bf24fac1f7492728980c75d24716
+  github.com/konstant-is/utilities-ui/bfd859e30d3f3f16e1f31550f886a1c69aa42b47(next@15.1.5)(react-dom@19.0.0)(react@19.0.0):
+    resolution: {tarball: https://codeload.github.com/konstant-is/utilities-ui/tar.gz/bfd859e30d3f3f16e1f31550f886a1c69aa42b47}
+    id: github.com/konstant-is/utilities-ui/bfd859e30d3f3f16e1f31550f886a1c69aa42b47
     name: '@konstant/utilities-ui'
-    version: 0.1.1
+    version: 0.1.10
     peerDependencies:
-      date-fns: ^4
       next: ^15
+      react: ^19.0.0
+      react-dom: ^19.0.0
     dependencies:
       date-fns: 4.1.0
+      deepmerge: 4.3.1
       next: 15.1.5(react-dom@19.0.0)(react@19.0.0)
-      pino: 9.6.0
-      pino-pretty: 13.0.0
       qs-esm: 7.0.2
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       slugify: 1.6.6
+      url: 0.11.4
     dev: false
